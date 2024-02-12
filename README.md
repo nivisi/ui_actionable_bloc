@@ -8,7 +8,7 @@
 
 ```yaml
 dependencies:
-  ui_actionable_bloc: ^1.0.0
+  ui_actionable_bloc: ^0.0.1
 ```
 
 ### Add the mixin
@@ -114,5 +114,5 @@ For regular `BlocActionsListener`, you don't have to worry about completing an a
 Actions received by a `BlocActionsListener` will be automatically completed when this listener is disposed.
 
 <!-- References -->
-[pub-version-img]: https://img.shields.io/badge/pub-v1.0.0-0175c2?logo=flutter
+[pub-version-img]: https://img.shields.io/badge/pub-v0.0.1-0175c2?logo=flutter
 [pub-version-url]: https://pub.dev/packages/ui_actionable_bloc
