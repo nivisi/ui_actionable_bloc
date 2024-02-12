@@ -1,0 +1,22 @@
+name: ui_actionable_bloc_example
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.1.5 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc:
+  ui_actionable_bloc:
+    path: ../../ui_actionable_bloc
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  monstarlab_lints: ^1.0.2
+
+flutter:
+  uses-material-design: true
