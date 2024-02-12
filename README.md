@@ -1,55 +1,54 @@
 # ui_actionable_bloc [![pub version][pub-version-img]][pub-version-url]
 
-🎬 A mixin on `Bloc` that allows to perform UI actions and get results back.
+🎬 A mixin on [`Bloc`](https://pub.dev/packages/bloc) that allows to perform UI actions and get results back.
 
 ## Getting started
 
-Install the package:
+### Install the package
 
 ```yaml
 dependencies:
   ui_actionable_bloc: ^1.0.0
 ```
 
-## Use it
+### Add the mixin
 
-1. Add the mixin to your [Bloc] or [Cubit]
+```dart
+class LoginCubit extends Cubit<LoginCubitState> with UiActionableBlocMixin<LoginCubitState, LoginAction> {
 
-   ```dart
-   class LoginCubit extends Cubit<LoginCubitState> with UiActionableBlocMixin<LoginCubitState, LoginAction> {
-   
-   ...
-   
-   }
-   ```
-2. Add an action listener to the UI
+...
 
-   ```dart
-   /// Somewhere in the UI, under the BlocProvider of LoginCubit:
-   @override
-   Widget build(BuildContext context) {
-     return BlocActionsListener<LoginCubit, LoginCubitState, LoginAction>(
-       listener: (context, state, action) {
-         // Handle LoginAction here!
-       },
-       child: ...,
-     );
-   }
-   ```
-3. Use [emitUiAction] to... emit an action:
+}
+```
 
-   ```dart
-   Future<void> login() async {
-     try {
-       final user = await _loginUseCase();
+### Add a listener
 
-       await emitUiAction(LoginAction.navigateHome(user));
-       // This 👆 will trigger the `listener` callback from above.
-     } catch (e, s) {
-       // Handle error
-     }
-   }
-   ```
+```dart
+/// Somewhere in the UI, under the BlocProvider of LoginCubit:
+@override
+Widget build(BuildContext context) {
+  return BlocActionsListener<LoginCubit, LoginCubitState, LoginAction>(
+    listener: (context, state, action) {
+      // Handle LoginAction here!
+    },
+    child: ...,
+  );
+}
+```
+### Emit actions!
+
+```dart
+Future<void> login() async {
+  try {
+    final user = await _loginUseCase();
+
+    await emitUiAction(LoginAction.navigateHome(user));
+    // This 👆 will trigger the `listener` callback from above.
+  } catch (e, s) {
+    // Handle error
+  }
+}
+```
 
 ## Passing the result back to the Bloc
 
@@ -74,7 +73,7 @@ You can pass the result of the UI action back to the Bloc. For example, you can 
    ```dart
    @override
    Widget build(BuildContext context) {
-     return BlocActionsListener<OtpCubit, OtpCubitState, OtpAction>(
+     return BlocActionsListener<OtpCubit, OtpCubitState, OtpAction>.completable(
        listener: (context, state, action, actionCompleter) {
          final otpInput = await Navigator.of(context).push(OtpInputRoute());
 
