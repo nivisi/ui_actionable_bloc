@@ -74,7 +74,7 @@
 ///    ```
 library ui_actionable_bloc;
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 export 'src/ui_actionable_bloc_mixin.dart'
     hide BlocUiActionCallback, BlocCompletableUiActionCallback;
