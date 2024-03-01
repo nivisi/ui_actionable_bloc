@@ -13,7 +13,7 @@ class MyCubit extends Cubit<MyState>
 
   Future<void> onButtonPressed() async {
     const action = MyAction(['First', 'Second', 'Third']);
-    final result = await emitUiAction<String>(action);
+    final result = emitUiAction<String>(action);
 
     debugPrint('Cubit: $result');
   }

@@ -47,7 +47,7 @@ part 'bloc_ui_action_callback.dart';
 ///        final user = await _loginUseCase();
 ///
 ///        // This will trigger
-///        await emitUiAction(LoginAction.navigateHome());
+///        emitUiAction(LoginAction.navigateHome());
 ///      } catch (e, s) {
 ///        // Handle error
 ///      }
@@ -94,7 +94,7 @@ mixin UiActionableBlocMixin<TState, TAction> on BlocBase<TState> {
 
   /// Emits an action that can be handled on the UI layer.
   /// Use [BlocActionsListener] for handling this action on the UI layer.
-  Future<TResult?> emitUiAction<TResult>(TAction action) async {
+  FutureOr<TResult?> emitUiAction<TResult>(TAction action) async {
     if (isClosed) {
       assert(false, 'Cannot emit UI actions after bloc\'s closure!');
       return null;
