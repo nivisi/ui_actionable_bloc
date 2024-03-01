@@ -1,6 +1,6 @@
 name: ui_actionable_bloc
 description: A mixin on Bloc that allows to perform UI actions and get results back.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/nivisi/ui_actionable_bloc
 repository: https://github.com/nivisi/ui_actionable_bloc
 issue_tracker: https://github.com/nivisi/ui_actionable_bloc/issues

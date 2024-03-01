@@ -36,7 +36,7 @@
 ///      try {
 ///        final user = await _loginUseCase();
 ///
-///        await emitUiAction(LoginAction.navigateHome());
+///        emitUiAction(LoginAction.navigateHome());
 ///      } catch (e, s) {
 ///        // Handle error
 ///      }

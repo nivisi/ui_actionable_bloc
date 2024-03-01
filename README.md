@@ -8,7 +8,7 @@
 
 ```yaml
 dependencies:
-  ui_actionable_bloc: ^0.0.1
+  ui_actionable_bloc: ^0.0.2
 ```
 
 ### Add the mixin
@@ -42,7 +42,7 @@ Future<void> login() async {
   try {
     final user = await _loginUseCase();
 
-    await emitUiAction(LoginAction.navigateHome(user));
+    emitUiAction(LoginAction.navigateHome(user));
     // This 👆 will trigger the `listener` callback from above.
   } catch (e, s) {
     // Handle error
@@ -114,5 +114,5 @@ For regular `BlocActionsListener`, you don't have to worry about completing an a
 Actions received by a `BlocActionsListener` will be automatically completed when this listener is disposed.
 
 <!-- References -->
-[pub-version-img]: https://img.shields.io/badge/pub-v0.0.1-0175c2?logo=flutter
+[pub-version-img]: https://img.shields.io/badge/pub-v0.0.2-0175c2?logo=flutter
 [pub-version-url]: https://pub.dev/packages/ui_actionable_bloc
