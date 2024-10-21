@@ -168,6 +168,8 @@ class _BlocActionsListenerState<
       }
     }
 
+    _subscription?.cancel();
+
     super.dispose();
   }
 
