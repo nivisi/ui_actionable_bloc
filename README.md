@@ -8,7 +8,7 @@
 
 ```yaml
 dependencies:
-  ui_actionable_bloc: ^0.0.2
+  ui_actionable_bloc: ^0.0.3
 ```
 
 ### Add the mixin
@@ -35,7 +35,8 @@ Widget build(BuildContext context) {
   );
 }
 ```
-### Emit actions!
+
+### Emit actions
 
 ```dart
 Future<void> login() async {
@@ -55,6 +56,7 @@ Future<void> login() async {
 You can pass the result of the UI action back to the Bloc. For example, you can show an OTP pop up or a new route with text input after sending an OTP:
 
 1. Await the result of `emitUiAction`:
+
    ```dart
    await _sendOtpUseCase();
 
@@ -68,6 +70,7 @@ You can pass the result of the UI action back to the Bloc. For example, you can 
 
    await _validateOtpUseCase(otp);
    ```
+
 2. Use `BlocActionsListener.completable` that has a slightly different `listener` callback:
 
    ```dart
@@ -114,5 +117,5 @@ For regular `BlocActionsListener`, you don't have to worry about completing an a
 Actions received by a `BlocActionsListener` will be automatically completed when this listener is disposed.
 
 <!-- References -->
-[pub-version-img]: https://img.shields.io/badge/pub-v0.0.2-0175c2?logo=flutter
+[pub-version-img]: https://img.shields.io/badge/pub-v0.0.3-0175c2?logo=flutter
 [pub-version-url]: https://pub.dev/packages/ui_actionable_bloc
